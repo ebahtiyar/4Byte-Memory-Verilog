@@ -1,0 +1,51 @@
+module fourbytememory
+(
+data,
+clk,en,wr,
+adr,
+out
+);
+input clk,en,wr;
+input [0:7]data;
+input  [0:1]adr;
+output [0:7]out;
+wire [0:7]w_w_out;
+wire [0:3]d_out;
+demux(en,adr[1],adr[0],d_out[0],d_out[1],d_out[2],d_out[3]);
+onebyte_memory(
+data[7],data[6],data[5],data[4],data[3],data[2],data[1],data[0],
+clk,
+w_w_out[7],w_w_out[6],w_w_out[5],w_w_out[4],w_w_out[3],w_w_out[2],w_w_out[1],w_w_out[0]
+);
+
+wire [0:7]w1;
+wire  [0:7]w_out;
+and(w1[0],d_out[0],wr); assign w_out[7] = w1[0] ? w_w_out{7}:1'bz;
+and(w1[1],d_out[0],wr); assign w_out[6] = w1[1] ? w_w_out{6}:1'bz;
+and(w1[2],d_out[0],wr); assign w_out[5] = w1[2] ? w_w_out{5}:1'bz;
+and(w1[3],d_out[0],wr); assign w_out[4] = w1[3] ? w_w_out{4}:1'bz;
+and(w1[4],d_out[0],wr); assign w_out[3] = w1[4] ? w_w_out{3}:1'bz;
+and(w1[5],d_out[0],wr); assign w_out[2] = w1[5] ? w_w_out{2}:1'bz;
+and(w1[6],d_out[0],wr); assign w_out[1] = w1[6] ? w_w_out{1}:1'bz;
+and(w1[7],d_out[0],wr); assign w_out[0] = w1[7] ? w_w_out{0}:1'bz;
+onebyte_memory(
+data[7],data[6],data[5],data[4],data[3],data[2],data[1],data[0],
+clk,
+w_w_out[7],w_w_out[6],w_w_out[5],w_w_out[4],w_w_out[3],w_w_out[2],w_w_out[1],w_w_out[0]
+); 
+wire [0:7]w2;
+wire  [0:7]w_out;
+and(w2[0],d_out[1],wr); assign w_out[7] = w2[0] ? w_w_out{7}:1'bz;
+and(w2[1],d_out[1],wr); assign w_out[6] = w2[1] ? w_w_out{6}:1'bz;
+and(w2[2],d_out[1],wr); assign w_out[5] = w2[2] ? w_w_out{5}:1'bz;
+and(w2[3],d_out[1],wr); assign w_out[4] = w2[3] ? w_w_out{4}:1'bz;
+and(w2[4],d_out[1],wr); assign w_out[3] = w2[4] ? w_w_out{3}:1'bz;
+and(w2[5],d_out[1],wr); assign w_out[2] = w2[5] ? w_w_out{2}:1'bz;
+and(w2[6],d_out[1],wr); assign w_out[1] = w2[6] ? w_w_out{1}:1'bz;
+and(w2[7],d_out[1],wr); assign w_out[0] = w2[7] ? w_w_out{0}:1'bz;
+
+
+
+
+
+

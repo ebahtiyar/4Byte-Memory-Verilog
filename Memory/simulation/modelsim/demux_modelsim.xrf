@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/13.1/Memory/demux.v
+source_file = 1, C:/altera/13.1/Memory/db/demux.cbx.xml
+source_file = 1, C:/altera/13.1/Memory/andgate3.v
+design_name = demux
+instance = comp, \out1~output , out1~output, demux, 1
+instance = comp, \out2~output , out2~output, demux, 1
+instance = comp, \out3~output , out3~output, demux, 1
+instance = comp, \out4~output , out4~output, demux, 1
+instance = comp, \en~input , en~input, demux, 1
+instance = comp, \adr1~input , adr1~input, demux, 1
+instance = comp, \adr0~input , adr0~input, demux, 1
+instance = comp, \comb_3|out , comb_3|out, demux, 1
+instance = comp, \comb_6|out , comb_6|out, demux, 1
+instance = comp, \comb_8|out , comb_8|out, demux, 1
+instance = comp, \comb_10|out , comb_10|out, demux, 1

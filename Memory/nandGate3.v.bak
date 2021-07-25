@@ -1,0 +1,7 @@
+module nandGate3(x,y,z,out);
+input x,y,z;
+output out;
+assign out = ~(x&y&z);
+
+
+endmodule 

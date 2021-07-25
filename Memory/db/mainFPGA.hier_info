@@ -1,0 +1,648 @@
+|mainFPGA
+data[7] => data[7].IN1
+data[6] => data[6].IN1
+data[5] => data[5].IN1
+data[4] => data[4].IN1
+data[3] => data[3].IN1
+data[2] => data[2].IN1
+data[1] => data[1].IN1
+data[0] => data[0].IN1
+clk => clk.IN1
+en_led <= en_led.DB_MAX_OUTPUT_PORT_TYPE
+wr_led <= wr_led.DB_MAX_OUTPUT_PORT_TYPE
+wr_bttn => wr_led.IN1
+adr_led[1] <= adr_led[1].DB_MAX_OUTPUT_PORT_TYPE
+adr_led[0] <= adr_led[0].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= fourbytememory:comb_8.port5
+out[6] <= fourbytememory:comb_8.port5
+out[5] <= fourbytememory:comb_8.port5
+out[4] <= fourbytememory:comb_8.port5
+out[3] <= fourbytememory:comb_8.port5
+out[2] <= fourbytememory:comb_8.port5
+out[1] <= fourbytememory:comb_8.port5
+out[0] <= fourbytememory:comb_8.port5
+digit <= <GND>
+
+
+|mainFPGA|fourbytememory:comb_8
+data[7] => data[7].IN4
+data[6] => data[6].IN4
+data[5] => data[5].IN4
+data[4] => data[4].IN4
+data[3] => data[3].IN4
+data[2] => data[2].IN4
+data[1] => data[1].IN4
+data[0] => data[0].IN4
+clk => clk.IN4
+en => en.IN1
+wr => wr.IN4
+adr[1] => adr[1].IN1
+adr[0] => adr[0].IN1
+out[7] <= out[7].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1].DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= out[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|demux:comb_3
+en => en.IN4
+adr0 => adr0.IN2
+adr1 => adr1.IN2
+out1 <= andgate3:comb_3.port3
+out2 <= andgate3:comb_6.port3
+out3 <= andgate3:comb_8.port3
+out4 <= andgate3:comb_10.port3
+
+
+|mainFPGA|fourbytememory:comb_8|demux:comb_3|andgate3:comb_3
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|demux:comb_3|andgate3:comb_6
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|demux:comb_3|andgate3:comb_8
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|demux:comb_3|andgate3:comb_10
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4
+data[7] => data[7].IN1
+data[6] => data[6].IN1
+data[5] => data[5].IN1
+data[4] => data[4].IN1
+data[3] => data[3].IN1
+data[2] => data[2].IN1
+data[1] => data[1].IN1
+data[0] => data[0].IN1
+clk => clk.IN8
+wr => w[0].IN0
+wr => w[1].IN0
+wr => w[2].IN0
+wr => w[3].IN0
+wr => w[4].IN0
+wr => w[5].IN0
+wr => w[6].IN0
+wr => w[7].IN0
+d_out => w[0].IN1
+d_out => w[1].IN1
+d_out => w[2].IN1
+d_out => w[3].IN1
+d_out => w[4].IN1
+d_out => w[5].IN1
+d_out => w[6].IN1
+d_out => w[7].IN1
+out[7] <= out[7].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1].DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= out[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_3
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_3|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_7
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_7|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_11
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_11|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_15
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_15|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_19
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_19|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_23
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_23|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_27
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_27|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_31
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_4|flipflop:comb_31|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5
+data[7] => data[7].IN1
+data[6] => data[6].IN1
+data[5] => data[5].IN1
+data[4] => data[4].IN1
+data[3] => data[3].IN1
+data[2] => data[2].IN1
+data[1] => data[1].IN1
+data[0] => data[0].IN1
+clk => clk.IN8
+wr => w[0].IN0
+wr => w[1].IN0
+wr => w[2].IN0
+wr => w[3].IN0
+wr => w[4].IN0
+wr => w[5].IN0
+wr => w[6].IN0
+wr => w[7].IN0
+d_out => w[0].IN1
+d_out => w[1].IN1
+d_out => w[2].IN1
+d_out => w[3].IN1
+d_out => w[4].IN1
+d_out => w[5].IN1
+d_out => w[6].IN1
+d_out => w[7].IN1
+out[7] <= out[7].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1].DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= out[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_3
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_3|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_7
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_7|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_11
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_11|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_15
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_15|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_19
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_19|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_23
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_23|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_27
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_27|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_31
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_5|flipflop:comb_31|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6
+data[7] => data[7].IN1
+data[6] => data[6].IN1
+data[5] => data[5].IN1
+data[4] => data[4].IN1
+data[3] => data[3].IN1
+data[2] => data[2].IN1
+data[1] => data[1].IN1
+data[0] => data[0].IN1
+clk => clk.IN8
+wr => w[0].IN0
+wr => w[1].IN0
+wr => w[2].IN0
+wr => w[3].IN0
+wr => w[4].IN0
+wr => w[5].IN0
+wr => w[6].IN0
+wr => w[7].IN0
+d_out => w[0].IN1
+d_out => w[1].IN1
+d_out => w[2].IN1
+d_out => w[3].IN1
+d_out => w[4].IN1
+d_out => w[5].IN1
+d_out => w[6].IN1
+d_out => w[7].IN1
+out[7] <= out[7].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1].DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= out[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_3
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_3|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_7
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_7|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_11
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_11|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_15
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_15|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_19
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_19|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_23
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_23|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_27
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_27|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_31
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_6|flipflop:comb_31|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7
+data[7] => data[7].IN1
+data[6] => data[6].IN1
+data[5] => data[5].IN1
+data[4] => data[4].IN1
+data[3] => data[3].IN1
+data[2] => data[2].IN1
+data[1] => data[1].IN1
+data[0] => data[0].IN1
+clk => clk.IN8
+wr => w[0].IN0
+wr => w[1].IN0
+wr => w[2].IN0
+wr => w[3].IN0
+wr => w[4].IN0
+wr => w[5].IN0
+wr => w[6].IN0
+wr => w[7].IN0
+d_out => w[0].IN1
+d_out => w[1].IN1
+d_out => w[2].IN1
+d_out => w[3].IN1
+d_out => w[4].IN1
+d_out => w[5].IN1
+d_out => w[6].IN1
+d_out => w[7].IN1
+out[7] <= out[7].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1].DB_MAX_OUTPUT_PORT_TYPE
+out[0] <= out[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_3
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_3|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_7
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_7|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_11
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_11|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_15
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_15|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_19
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_19|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_23
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_23|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_27
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_27|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_31
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mainFPGA|fourbytememory:comb_8|onebyte_memory:comb_7|flipflop:comb_31|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

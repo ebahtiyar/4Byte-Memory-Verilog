@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/13.1/Memory/andgate3.v
+source_file = 1, C:/altera/13.1/Memory/db/andgate3.cbx.xml
+design_name = andgate3
+instance = comp, \out~output , out~output, andgate3, 1
+instance = comp, \x~input , x~input, andgate3, 1
+instance = comp, \y~input , y~input, andgate3, 1
+instance = comp, \z~input , z~input, andgate3, 1
+instance = comp, \out~0 , out~0, andgate3, 1

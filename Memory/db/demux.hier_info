@@ -1,0 +1,38 @@
+|demux
+en => en.IN4
+adr0 => adr0.IN2
+adr1 => adr1.IN2
+out1 << andgate3:comb_3.port3
+out2 << andgate3:comb_6.port3
+out3 << andgate3:comb_8.port3
+out4 << andgate3:comb_10.port3
+
+
+|demux|andgate3:comb_3
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|demux|andgate3:comb_6
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|demux|andgate3:comb_8
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|demux|andgate3:comb_10
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

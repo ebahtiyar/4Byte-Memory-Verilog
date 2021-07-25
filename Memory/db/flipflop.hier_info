@@ -1,0 +1,13 @@
+|flipflop
+clk => clk.IN1
+data => comb.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flipflop|nandGate3:comb_5
+x => out.IN0
+y => out.IN1
+z => out.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

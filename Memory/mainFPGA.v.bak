@@ -1,0 +1,35 @@
+module mainFPGA
+(
+data,
+clk,en_led,wr_led,wr_bttn,
+adr_led,
+out
+)
+
+output clk,en_led,wr_led;
+input wr_bttn // reset button
+input [0:7]data;
+output   [0:1]adr_led;
+output [0:7]out; // seven segment
+// There are 5 input in our fpga so that we assinged with handled some inputs
+assign data[4] = 0;
+assign data[5] = 0;
+assign data[6] = 0;
+assign data[7] = 0;
+//Our led give ligh in "0"
+assign en_led = 1; // LED 2 
+assign adr_led[0] = 0; // LED 3 
+assign adr_led[0] = 0; // LED 4
+//wR is LED 1 
+// Our seven segment is high low so "0" give light and "1" does not give light
+fourbytememory
+(
+data,
+clk,en_led,wr_led,
+adr_led,
+out
+);
+
+
+
+endmodule 
